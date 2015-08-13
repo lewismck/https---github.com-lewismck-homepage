@@ -26,6 +26,9 @@
 		if(h > 17){
 			greeting= "Good Evening";
 		}
+		if(h > 19 && m > 29){
+			greeting = "It's Night Time"
+		}
 		
 	    document.getElementById('time').innerHTML = h+":"+m+":"+s +"<br> <br>" + greeting;
 	    var t = setTimeout(function(){startTime()},500);
