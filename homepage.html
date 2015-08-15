@@ -32,11 +32,27 @@
 		
 	    document.getElementById('time').innerHTML = h+":"+m+":"+s +"<br> <br>" + greeting;
 	    var t = setTimeout(function(){startTime()},500);
+		backgroundSwitch(h);
+		
 	}
 
 	function checkTime(i) {
 	    if (i<10) {i = "0" + i};  // add zero in front of numbers < 10
 	    return i;
+	}
+	
+	//content switcher
+	function backgroundSwitch(i){
+		var morning = 'url("stylesheets/a.jpg")';
+		var evening = 'url("stylesheets/c.jpg")';
+		
+		if(i < 17 && i > 6){
+		document.body.style.background = morning;
+		}
+		if(i > 16){	
+			document.body.style.background = evening;
+		}
+	
 	}
 	</script>
 	
