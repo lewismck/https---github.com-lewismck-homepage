@@ -41,16 +41,20 @@
 	    return i;
 	}
 	
-	//content switcher
+	//background switcher
 	function backgroundSwitch(i){
+		var brighton = 'url("stylesheets/b.jpg")';
 		var morning = 'url("stylesheets/a.jpg")';
 		var evening = 'url("stylesheets/c.jpg")';
 		
-		if(i < 17 && i > 6){
+		if(i < 17){
 		document.body.style.background = morning;
 		}
-		if(i > 16){	
+		else if(i > 16){	
 			document.body.style.background = evening;
+		}
+		else{ //pointless but the image is there.
+			document.body.style.background = brighton;
 		}
 	
 	}
