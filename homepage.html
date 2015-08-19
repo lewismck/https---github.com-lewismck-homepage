@@ -17,8 +17,8 @@
 	    m = checkTime(m);
 	    s = checkTime(s);
 		var greeting = "";
-		if(h < 11){
-			greeting = "Good Morning"
+		if(h < 12){
+			greeting = "Good Morning";
 		}
 		if(h > 11){
 			greeting = "Good Afternoon";
@@ -27,7 +27,7 @@
 			greeting= "Good Evening";
 		}
 		if(h > 19 && m > 29){
-			greeting = "It's Night Time"
+			greeting = "It's Night Time";
 		}
 		
 	    document.getElementById('time').innerHTML = h+":"+m+":"+s +"<br> <br>" + greeting;
