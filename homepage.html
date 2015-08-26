@@ -63,36 +63,46 @@
 		if(h > 19 && m > 29){
 			greeting = "It's Night Time";
 		}
+		//keep h 12 hour
+		if(h > 12){
+			var newH = h-12;
+		}
 		
 		if(m < 15){
-		if(h > 12){
-			h = h -12;
-		}
-	    document.getElementById('ftime').innerHTML = "About: "+h+" o'clock"+"<br> <br>" + greeting;
-	    var t = setTimeout(function(){startTime()},500);
+			if(h > 12){
+				document.getElementById('ftime').innerHTML = "About: "+newH+" o'clock"+"<br> <br>" + greeting;
+			}
+			else{
+			document.getElementById('ftime').innerHTML = "About: "+h+" o'clock"+"<br> <br>" + greeting;
+			}
 		}
 		if(m > 14){
-		if(h > 12){
-			h = h -12;
-		}
-	    document.getElementById('ftime').innerHTML = "About quarter past: "+h+"<br> <br>" + greeting;
-	    var t = setTimeout(function(){startTime()},500);
+			if(h > 12){
+				document.getElementById('ftime').innerHTML = "About quarter past: "+newH+"<br> <br>" + greeting;
+			}
+			else{
+			document.getElementById('ftime').innerHTML = "About quarter past: "+h+"<br> <br>" + greeting;
+			}
 		}
 		if(m > 29){
-		if(h > 12){
-			h = h -12;
-		}
-	    document.getElementById('ftime').innerHTML = "About half past: "+h+"<br> <br>" + greeting;
-	    var t = setTimeout(function(){startTime()},500);
+			if(h > 12){
+				document.getElementById('ftime').innerHTML = "About half past: "+newH+"<br> <br>" + greeting;
+			}
+			else{
+			document.getElementById('ftime').innerHTML = "About half past: "+h+"<br> <br>" + greeting;
+			}
 		}
 		if(m > 44){
-		if(h > 12){
-			h = h -12;
+			var nextH = h+1
+			if(h > 12){
+				document.getElementById('ftime').innerHTML = "About quarter to: "+nextH+"<br> <br>" + greeting;
+			}
+			else{
+			document.getElementById('ftime').innerHTML = "About quarter to: "+nextH+"<br> <br>" + greeting;
+			}
 		}
-		var nextH = h+1
-	    document.getElementById('ftime').innerHTML = "About quarter to: "+nextH+"<br> <br>" + greeting;
-	    var t = setTimeout(function(){startTime()},500);
-		}
+		
+		var t = setTimeout(function(){fuzzyTime()},500);
 		backgroundSwitch(h);
 		
 	}
