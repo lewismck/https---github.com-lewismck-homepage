@@ -99,6 +99,8 @@ Typography
 */
 body{
 	font: 300 16px/22px "lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	-webkit-transition: background-image 0.2s ease-in-out;
+	transition: background-image 0.2s ease-in-out;
 	
 }
 h1{
