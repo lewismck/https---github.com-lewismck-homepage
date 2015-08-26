@@ -29,6 +29,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
   line-height: 1;
+  min-width: 490px;
 }
 ol, ul {
   list-style: none;
@@ -98,8 +99,9 @@ Typography
 */
 body{
 	font: 300 16px/22px "lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	background-image: url("c.jpg");
-	background-image: no-repeat;
+	-webkit-transition: background-image 0.2s ease-in-out;
+	transition: background-image 0.2s ease-in-out;
+	
 }
 h1{
 	align: center;
@@ -116,15 +118,6 @@ a:hover{
 Layout
 ==================
 */
-.banner{
-	align: center;
-	padding-top: 2%;
-	padding-bottom: 2%;
-	padding-left: 1%;
-	padding-right: 1%;
-	font-size: 32px;
-	font-weight: 300px;
-}
 div{
 	width: 100%;
 	color: #fff;
