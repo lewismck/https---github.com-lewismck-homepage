@@ -51,6 +51,7 @@
 	    m = checkTime(m);
 	    s = checkTime(s);
 		var greeting = "";
+		var newH = 0;
 		if(h < 12){
 			greeting = "Good Morning";
 		}
@@ -65,41 +66,25 @@
 		}
 		//keep h 12 hour
 		if(h > 12){
-			var newH = h-12;
+			newH = h-12;
+		}
+		else{
+			newH = h;
 		}
 		
 		if(m < 15){
-			if(h > 12){
-				document.getElementById('ftime').innerHTML = "About: "+newH+" o'clock"+"<br> <br>" + greeting;
-			}
-			else{
-			document.getElementById('ftime').innerHTML = "About: "+h+" o'clock"+"<br> <br>" + greeting;
-			}
+			document.getElementById('ftime').innerHTML = "About: "+newH+" o'clock"+"<br> <br>" + greeting;
 		}
 		if(m > 14){
-			if(h > 12){
-				document.getElementById('ftime').innerHTML = "About quarter past: "+newH+"<br> <br>" + greeting;
-			}
-			else{
-			document.getElementById('ftime').innerHTML = "About quarter past: "+h+"<br> <br>" + greeting;
-			}
+			document.getElementById('ftime').innerHTML = "About quarter past: "+newH+"<br> <br>" + greeting;
 		}
 		if(m > 29){
-			if(h > 12){
-				document.getElementById('ftime').innerHTML = "About half past: "+newH+"<br> <br>" + greeting;
-			}
-			else{
-			document.getElementById('ftime').innerHTML = "About half past: "+h+"<br> <br>" + greeting;
-			}
+
+			document.getElementById('ftime').innerHTML = "About half past: "+newH+"<br> <br>" + greeting;
 		}
 		if(m > 44){
-			var nextH = h+1
-			if(h > 12){
-				document.getElementById('ftime').innerHTML = "About quarter to: "+nextH+"<br> <br>" + greeting;
-			}
-			else{
+			var nextH = newH+1
 			document.getElementById('ftime').innerHTML = "About quarter to: "+nextH+"<br> <br>" + greeting;
-			}
 		}
 		
 		var t = setTimeout(function(){fuzzyTime()},500);
