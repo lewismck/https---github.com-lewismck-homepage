@@ -41,6 +41,62 @@
 	    return i;
 	}
 	
+	//fuzzy clock totally scrappy no thought put into this 
+	//but hey I'll make it neat soon I've got videogames to play
+	function fuzzyTime() {
+	    var today=new Date();
+	    var h=today.getHours();
+	    var m=today.getMinutes();
+	    var s=today.getSeconds();
+	    m = checkTime(m);
+	    s = checkTime(s);
+		var greeting = "";
+		if(h < 12){
+			greeting = "Good Morning";
+		}
+		if(h > 11){
+			greeting = "Good Afternoon";
+		}
+		if(h > 17){
+			greeting= "Good Evening";
+		}
+		if(h > 19 && m > 29){
+			greeting = "It's Night Time";
+		}
+		
+		if(m < 15){
+		if(h > 12){
+			h = h -12;
+		}
+	    document.getElementById('ftime').innerHTML = "About: "+h+" o'clock"+"<br> <br>" + greeting;
+	    var t = setTimeout(function(){startTime()},500);
+		}
+		if(m > 14){
+		if(h > 12){
+			h = h -12;
+		}
+	    document.getElementById('ftime').innerHTML = "About quarter past: "+h+"<br> <br>" + greeting;
+	    var t = setTimeout(function(){startTime()},500);
+		}
+		if(m > 29){
+		if(h > 12){
+			h = h -12;
+		}
+	    document.getElementById('ftime').innerHTML = "About half past: "+h+"<br> <br>" + greeting;
+	    var t = setTimeout(function(){startTime()},500);
+		}
+		if(m > 44){
+		if(h > 12){
+			h = h -12;
+		}
+		var nextH = h+1
+	    document.getElementById('ftime').innerHTML = "About quarter to: "+nextH+"<br> <br>" + greeting;
+	    var t = setTimeout(function(){startTime()},500);
+		}
+		backgroundSwitch(h);
+		
+	}
+	
 	//background switcher
 	function backgroundSwitch(i){
 		var brighton = 'url("stylesheets/b.jpg")';
@@ -64,6 +120,9 @@
 <body onload="startTime()">
 	<section class="grid">
 	<div id="time"></div>
+	<div id="ftime">
+		<a class="btn" onclick="fuzzyTime()">Fuzzy Time</a>
+	</div>
 </section>
 	<br>
 	<br>

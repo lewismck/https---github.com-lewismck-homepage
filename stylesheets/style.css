@@ -115,6 +115,19 @@ a:hover{
 }
 /*
 ==================
+Buttons
+==================
+*/
+.btn{
+	border: 1px solid #92B5CC;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.btn:hover{
+	border: 1px solid #B4DFFC;
+}
+/*
+==================
 Layout
 ==================
 */
