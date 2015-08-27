@@ -130,6 +130,8 @@ Buttons
 	border: 1px solid #92B5CC;
 	padding-top: 2px;
 	padding-bottom: 2px;
+	padding-left: 1px;
+	padding-right: 1px;
 	font-size: 15px;
 }
 .btn-alt:hover{
@@ -150,6 +152,9 @@ div{
 	padding-right: 1%;
 	font-size: 32px;
 	background: rgba(49, 63, 72, .8);
+}
+span{
+	cursor: pointer;
 }
 .div2{
 	width: 100%;
