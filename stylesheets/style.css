@@ -126,6 +126,15 @@ Buttons
 .btn:hover{
 	border: 1px solid #B4DFFC;
 }
+.btn-alt{
+	border: 1px solid #92B5CC;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	font-size: 15px;
+}
+.btn-alt:hover{
+	border: 1px solid #B4DFFC;
+}
 /*
 ==================
 Layout
@@ -142,7 +151,16 @@ div{
 	font-size: 32px;
 	background: rgba(49, 63, 72, .8);
 }
-
+.div2{
+	width: 100%;
+	color: #fff;
+	align: center;
+	padding-bottom: 1%;
+	padding-left: 1%;
+	padding-right: 1%;
+	font-size: 32px;
+	background: rgba(49, 63, 72, .8);
+}
 .col5th{
 	width: 20%;
 	color: #fff;

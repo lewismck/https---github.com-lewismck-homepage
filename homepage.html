@@ -65,7 +65,7 @@
 			greeting = "It's Night Time";
 		}
 		//keep h 12 hour
-		if(h > 12){
+		if(h > 11){
 			newH = h-12;
 		}
 		else{
@@ -73,18 +73,18 @@
 		}
 		
 		if(m < 15){
-			document.getElementById('ftime').innerHTML = "About: "+newH+" o'clock"+"<br> <br>" + greeting;
+			document.getElementById('time').innerHTML = "About: "+newH+" o'clock"+"<br> <br>" + greeting;
 		}
 		if(m > 14){
-			document.getElementById('ftime').innerHTML = "About quarter past: "+newH+"<br> <br>" + greeting;
+			document.getElementById('time').innerHTML = "About quarter past: "+newH+"<br> <br>" + greeting;
 		}
 		if(m > 29){
 
-			document.getElementById('ftime').innerHTML = "About half past: "+newH+"<br> <br>" + greeting;
+			document.getElementById('time').innerHTML = "About half past: "+newH+"<br> <br>" + greeting;
 		}
 		if(m > 44){
 			var nextH = newH+1
-			document.getElementById('ftime').innerHTML = "About quarter to: "+nextH+"<br> <br>" + greeting;
+			document.getElementById('time').innerHTML = "About quarter to: "+nextH+"<br> <br>" + greeting;
 		}
 		
 		var t = setTimeout(function(){fuzzyTime()},500);
@@ -109,15 +109,60 @@
 		}
 	
 	}
+
+	//local storage testing
+	function chooseTime(){
+	    var d=new Date();
+	    var h=d.getHours();
+		backgroundSwitch(h);
+		console.log("test");
+		populateStorage('clock','regular');
+		
+	}
+	//method to fill storage
+	function populateStorage(id, value){
+		localStorage.setItem(id, value);
+	}
+	//check the local storage and set clock accordingly
+	function checkStorage(){
+		if(!localStorage.getItem('clock')){
+			chooseTime();
+		}
+		if(localStorage.getItem('clock') == "fuzzy"){
+			fuzzyTime();
+		}
+		if(localStorage.getItem('clock') == "regular"){
+			startTime();
+		}
+	}
+	//clear all local storage
+	function clearStorage(){
+		localStorage.clear();
+	}
+	//switch the current clock to the alternative
+	function switchClock(){
+		if(localStorage.getItem('clock') == 'fuzzy'){
+			populateStorage('clock','regular');
+			startTime();
+			location.reload();
+		}
+		else if(localStorage.getItem('clock') == 'regular'){
+			populateStorage('clock','fuzzy');
+			fuzzyTime();
+			location.reload();
+		}
+	}
+
+	
 	</script>
 	
 </head>
-<body onload="startTime()">
+<body onload="checkStorage()">
 	<section class="grid">
 	<div id="time"></div>
-	<div id="ftime">
-		<a class="btn" onclick="fuzzyTime()">Fuzzy Time</a>
-	</div>
+	<section class="div2" id="ftime">
+		<a class="btn-alt" onclick="switchClock()">switch Clock</a>
+	</section>
 </section>
 	<br>
 	<br>
