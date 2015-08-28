@@ -143,12 +143,12 @@
 	function switchClock(){
 		if(localStorage.getItem('clock') == 'fuzzy'){
 			populateStorage('clock','regular');
-			startTime();
+			//startTime();
 			location.reload();
 		}
 		else if(localStorage.getItem('clock') == 'regular'){
 			populateStorage('clock','fuzzy');
-			fuzzyTime();
+			//fuzzyTime();
 			location.reload();
 		}
 	}
