@@ -76,15 +76,15 @@
 			document.getElementById('time').innerHTML = "About: "+newH+" o'clock"+"<br> <br>" + greeting;
 		}
 		if(m > 14){
-			document.getElementById('time').innerHTML = "About quarter past: "+newH+"<br> <br>" + greeting;
+			document.getElementById('time').innerHTML = "About: quarter past "+newH+"<br> <br>" + greeting;
 		}
 		if(m > 29){
 
-			document.getElementById('time').innerHTML = "About half past: "+newH+"<br> <br>" + greeting;
+			document.getElementById('time').innerHTML = "About: half past "+newH+"<br> <br>" + greeting;
 		}
 		if(m > 44){
 			var nextH = newH+1
-			document.getElementById('time').innerHTML = "About quarter to: "+nextH+"<br> <br>" + greeting;
+			document.getElementById('time').innerHTML = "About: quarter to "+nextH+"<br> <br>" + greeting;
 		}
 		
 		var t = setTimeout(function(){fuzzyTime()},500);
