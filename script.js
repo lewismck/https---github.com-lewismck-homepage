@@ -1,26 +1,27 @@
 //Used for both clocks so have greater scope
-var today=new Date();
-var h=today.getHours();
-var m=today.getMinutes();
-var s=today.getSeconds();
-m = checkTime(m);
-s = checkTime(s);
-var greeting = "";
-if(h < 12){
-	greeting = "Good Morning";
-}
-if(h > 11){
-	greeting = "Good Afternoon";
-}
-if(h > 17){
-	greeting= "Good Evening";
-}
-if(h > 20){
-	greeting = "It's Night Time";
-}
 
 //start the regular clock
 function startTime() {
+	var today=new Date();
+	var h=today.getHours();
+	var m=today.getMinutes();
+	var s=today.getSeconds();
+	m = checkTime(m);
+	s = checkTime(s);
+	var greeting = "";
+	if(h < 12){
+		greeting = "Good Morning";
+	}
+	if(h > 11){
+		greeting = "Good Afternoon";
+	}
+	if(h > 17){
+		greeting= "Good Evening";
+	}
+	if(h > 20){
+		greeting = "It's Night Time";
+	}
+	
     document.getElementById('time').innerHTML = h+":"+m+":"+s +"<br> <br>" + greeting;
     var t = setTimeout(function(){startTime()},500);
 	backgroundSwitch(h);
@@ -35,6 +36,25 @@ function checkTime(i) {
 //fuzzy clock totally scrappy no thought put into this 
 //but hey I'll make it neat soon I've got videogames to play
 function fuzzyTime() {
+	var today=new Date();
+	var h=today.getHours();
+	var m=today.getMinutes();
+	var s=today.getSeconds();
+	m = checkTime(m);
+	s = checkTime(s);
+	var greeting = "";
+	if(h < 12){
+		greeting = "Good Morning";
+	}
+	if(h > 11){
+		greeting = "Good Afternoon";
+	}
+	if(h > 17){
+		greeting= "Good Evening";
+	}
+	if(h > 20){
+		greeting = "It's Night Time";
+	}
 	var newH = 0;
 	//keep h 12 hour
 	if(h > 11){
