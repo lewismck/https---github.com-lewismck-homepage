@@ -57,13 +57,13 @@ function fuzzyTime() {
 	}
 	var newH = 0;
 	//keep h 12 hour
-	if(h > 11){
+	if(h > 11 && h != 12){
 		newH = h-12;
 	}
 	else{
 		newH = h;
 	}
-	
+	 
 	if(m < 15){
 		document.getElementById('time').innerHTML = "About: "+newH+" o'clock"+"<br> <br>" + greeting;
 	}
@@ -76,12 +76,66 @@ function fuzzyTime() {
 	}
 	if(m > 44){
 		var nextH = newH+1
+		if(h == 12){//stop 'quarter to 13' from happening
+			nextH = 1;
+		}
+		
 		document.getElementById('time').innerHTML = "About: quarter to "+nextH+"<br> <br>" + greeting;
 	}
 	
 	var t = setTimeout(function(){fuzzyTime()},500);
 	backgroundSwitch(h);
 	
+}
+
+//method to test the fuzzy clock, hour and minute params.
+function testFuzzy(h,m){
+	var today=new Date();
+	var s=today.getSeconds();
+	s = checkTime(s);
+	var greeting = "";
+	if(h < 12){
+		greeting = "Good Morning";
+	}
+	if(h > 11){
+		greeting = "Good Afternoon";
+	}
+	if(h > 17){
+		greeting= "Good Evening";
+	}
+	if(h > 20){
+		greeting = "It's Night Time";
+	}
+	var newH = 0;
+	//keep h 12 hour
+	if(h > 11 && h != 12){
+		newH = h-12;
+	}
+	else{
+		newH = h;
+	}
+	 
+	if(m < 15){
+		document.getElementById('test').innerHTML = "About: "+newH+" o'clock"+"<br> <br>" + greeting;
+	}
+	if(m > 14){
+		document.getElementById('test').innerHTML = "About: quarter past "+newH+"<br> <br>" + greeting;
+	}
+	if(m > 29){
+
+		document.getElementById('test').innerHTML = "About: half past "+newH+"<br> <br>" + greeting;
+	}
+	if(m > 44){
+		var nextH = newH+1
+		if(h == 12){//stop 'quarter to 13' from happening
+			nextH = 1;
+		}
+		
+		document.getElementById('test').innerHTML = "About: quarter to "+nextH+"<br> <br>" + greeting;
+	}
+	
+	var t = setTimeout(function(){testFuzzy(h,m)},500);
+	backgroundSwitch(h);
 }
 
 //background switcher
