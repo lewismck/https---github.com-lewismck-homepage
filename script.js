@@ -143,9 +143,10 @@ function backgroundSwitch(i){
 	var brighton = 'url("stylesheets/b.jpg")';
 	var morning = 'url("stylesheets/a.jpg")';
 	var evening = 'url("stylesheets/c.jpg")';
+	var trees = 'url("stylesheets/d.png") center';
 	
 	if(i < 18){
-		document.body.style.background = morning
+		document.body.style.background = trees //previously morning trees for a change now 
 	}
 	else if(i > 17){	
 		document.body.style.background = evening;
