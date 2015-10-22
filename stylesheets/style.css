@@ -102,7 +102,10 @@ body{
 	-webkit-transition: background-image 0.2s ease-in-out;
 	transition: background-image 0.2s ease-in-out;
 	background-repeat: repeat-x;
-	
+    animation:  background-image fadein 0.5s;
+    -moz-animation: background-image fadein 0.5s; /* Firefox */
+    -webkit-animation: background-image fadein 0.5s; /* Safari and Chrome */
+    -o-animation: background-image fadein 0.5s; /* Opera */
 }
 h1{
 	align: center;
@@ -173,15 +176,20 @@ span{
 	vertical-align: top;
 	display: inline-block;
 	background: rgba(49, 63, 72, .8);
-	height: 120px;
-    animation: fadein 1s;
-    -moz-animation: fadein 1s; /* Firefox */
-    -webkit-animation: fadein 1s; /* Safari and Chrome */
-    -o-animation: fadein 1s; /* Opera */
+	height: 130px;
+    animation: fadein 0.8s;
+    -moz-animation: fadein 0.8s; /* Firefox */
+    -webkit-animation: fadein 0.8s; /* Safari and Chrome */
+    -o-animation: fadein 0.8s; /* Opera */
 }
 .col5th:hover{
 	background: rgba(49, 63, 72, .99);
 }
+/*
+==================
+Animation
+==================
+*/
 @keyframes fadein {
     from {
         opacity:0;
